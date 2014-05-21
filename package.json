@@ -1,0 +1,21 @@
+{
+  "name": "node-starter",
+  "version": "0.0.0",
+  "description": "Following tutorials in the book 'Node.js the Right Way'",
+  "main": "read-simple.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/bigandy/node-starter.git"
+  },
+  "author": "",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/bigandy/node-starter/issues"
+  },
+  "devDependencies": {
+    "gulp-watch": "~0.6.4"
+  }
+}
