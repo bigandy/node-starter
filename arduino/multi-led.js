@@ -12,34 +12,35 @@ var five = require("johnny-five"),
 
 myBoard.on("ready", function() {
 
-  // initialize LEDs using a for loop
-  for (var i = 0; i < ledPins.length; i++){
-      var myLed = new five.Led(ledPins[i]);
-      leds.push(myLed);
-  }
+	// initialize LEDs using a for loop
+	for (var i = 0; i < ledPins.length; i++){
+		var myLed = new five.Led(ledPins[i]);
+		leds.push(myLed);
+	}
 
 
 
-  function oneAfterAnother() {
-      var delay = 0;
-      board.counter = 0;
+	function oneAfterAnother() {
+		var delay = 0;
+		board.counter = 0;
 
-      for (var i = 0; i < leds.length; i++) {
+		for (var i = 0; i < leds.length; i++) {
 
-        board.wait(delay,function(){
-            // console.log(this.counter + " on");
-            leds[this.counter].on();
-        });
+			board.wait(delay, function () {
+				// console.log(this.counter + " on");
+				leds[this.counter].on();
+			});
 
-        board.wait(delay + multiplier,function(){
-            // console.log(this.counter + " off");
-            leds[this.counter].off();
-            this.counter = (this.counter + 1) % leds.length;
-        });
-        delay += multiplier;
-      }
-  }
+			board.wait(delay + multiplier, function () {
+				// console.log(this.counter + " off");
+				leds[this.counter].off();
+				this.counter = (this.counter + 1) % leds.length;
+			});
 
-  oneAfterAnother();
-  board.loop(multiplier * leds.length, oneAfterAnother);
+			delay += multiplier;
+		}
+	}
+
+	oneAfterAnother();
+	board.loop(multiplier * leds.length, oneAfterAnother);
 });
