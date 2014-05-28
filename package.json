@@ -16,7 +16,8 @@
     "url": "https://github.com/bigandy/node-starter/issues"
   },
   "devDependencies": {
-    "gulp-watch": "~0.6.4"
+    "gulp-watch": "~0.6.4",
+    "wait.for": "^0.6.4"
   },
   "dependencies": {
     "johnny-five": "^0.7.39"
