@@ -20,6 +20,6 @@
     "wait.for": "^0.6.4"
   },
   "dependencies": {
-    "johnny-five": "^0.7.39"
+    "johnny-five": "^0.8.37"
   }
 }
